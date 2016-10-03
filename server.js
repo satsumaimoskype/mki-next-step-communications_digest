@@ -25,7 +25,7 @@ var app = express();
 
 // Configure Express application.
 //app.configure(function() {
-  app.use(express.logger());
+//  app.use(express.logger());
 //});
 // http://stackoverflow.com/questions/25083239/openshift-socket-io-express-deprecated-app-configure-check-app-getenv
 
