@@ -1,0 +1,1135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=ISO-8859-1">
+
+<!-- **** Embedded style definition section starts here. *****-->
+
+<style type = "text/css">
+
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		}
+
+	a:link, a:active {
+		color: #002a95;
+		}
+
+	h1, h3, a:visited {
+		color: #004d95;
+		}
+
+	.dark-background	 {
+		color: #ffffff;
+		background-color: #004d95;
+		height: 1.25em
+		}
+
+	.light-background	 {
+		background-color: #cccccc;
+		border: 1px #cccccc solid;
+		}
+
+	.light-background h3, .light-background p {
+		margin-left: .35em;
+		}
+
+	code  {
+		font-size:       115%;
+		letter-spacing: -1px;
+		line-height:     100%;
+		  }
+
+	.square-bullet {
+		list-style-type: square;
+		}
+
+	.big-rule {
+		margin-top: -1%;
+		margin-bottom: -1%;
+		color: #004d95;
+		background-color: #004d95;
+		height: 20px;
+	   }
+
+	.section-divider {
+		border: 0;
+		color: #004d95;
+		background-color: #004d95;
+		height: 2px;
+	   }
+
+	.item-separator {
+		border: 0;
+		color: #999999;
+		background-color: #999999;
+		height: 2px;
+		width: 35%;
+	   }
+
+	.small-text {
+		font-size: 80%;
+		}
+
+	.small-text b {
+		color: #004d95;
+		}
+
+	.os-table {
+		font-weight: bold;
+		font-size: 80%;
+		}
+
+	.release-number {
+		font-weight: normal;
+		}
+
+	.description {
+		color: #A01C6D;
+		font-weight: bold;
+		}
+
+</style>
+<!-- **** End of embedded style definition. ***** -->
+
+<title>Genesys WebRTC Gateway 8.5.x Release Note</title>
+</head>
+
+<body>
+
+<hr class=big-rule>
+
+<div align=center>
+<a name=top></a>
+<h1>
+Release Note
+</h1>
+
+<h2>
+Genesys WebRTC Gateway
+</h2>
+
+<h2>
+8.5.x
+</h2>
+</div>
+
+<div align=center> 
+  <h3 class=dark-background> <b> <font size=2>Genesys Telecommunications Laboratories, 
+    Inc. &copy; 2014&#8211;2015</font> </b> </h3>
+</div>
+
+<!-- Table of Contents starts here. -->
+
+<a name=contents></a><h3>
+Contents
+</h3>
+<a href="#introduction">
+Introduction
+</a><br/><br/>
+
+<!-- Table of supported Operating Systems -->
+
+<a name=os-support></a>
+<table class=os-table border="1">
+  <tr align="center" bgcolor="#004d95"> 
+    <td width="343" align="left" bgcolor="#FFFFFF"> <font color="#004d95">Release 
+      Number</font> </td>
+    <th width="50"><font color="#FFFFFF"> AIX </font></th>
+    <th width="70"><font color="#FFFFFF"> HP-UX PA </font></th>
+    <th width="70"><font color="#FFFFFF"> HP-UX IPF </font></th>
+    <th width="67"><font color="#FFFFFF"> Linux </font></th>
+    <th width="68"><font color="#FFFFFF"> Solaris </font></th>
+    <!--
+<th width="88"><font color="#FFFFFF">
+Tru64 UNIX
+</font></th>
+-->
+    <th width="85"><font color="#FFFFFF"> Windows </font></th>
+  </tr>
+  <tr valign="top" align="center">
+    <td align="left" class=release-number><a href="#8.5.2xx.xx">8.5.204.88 [10/23/2015] 
+      &ndash; Hot Fix</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr valign="top" align="center"> 
+    <td align="left" class=release-number><a href="#8.5.203.14">8.5.203.14 [03/24/2015] 
+      &ndash; General </a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr valign="top" align="center"> 
+    <td align="left" class=release-number><a href="#8.5.202.44">8.5.202.44 [12/12/2014] 
+      &ndash; Hot Fix</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr valign="top" align="center"> 
+    <td width="343" align="left" class=release-number> <a href="#8.5.201.90">8.5.201.95 
+      [10/06/2014] &ndash; General</a> </td>
+    <td>&nbsp;</td>
+    <!-- AIX -->
+    <td>&nbsp;</td>
+    <!-- HP-UX PA -->
+    <td>&nbsp;</td>
+    <!-- HP-UX IPF -->
+    <td>X</td>
+    <!-- Linux -->
+    <td>&nbsp;</td>
+    <!-- Solaris -->
+    <!-- <td>X</td> -->
+    <!-- Tru64 UNIX -->
+    <td>X</td>
+    <!-- Windows -->
+  </tr>
+  <!-- Release-specific table entry ends here -->
+  <tr valign="top" align="center"> 
+    <td width="343" align="left" class=release-number> <a href="#8.5.201.30">8.5.201.30 
+      [07/18/2014] &ndash; General</a> </td>
+    <td>&nbsp;</td>
+    <!-- AIX -->
+    <td>&nbsp;</td>
+    <!-- HP-UX PA -->
+    <td>&nbsp;</td>
+    <!-- HP-UX IPF -->
+    <td>X</td>
+    <!-- Linux -->
+    <td>&nbsp;</td>
+    <!-- Solaris -->
+    <!-- <td>X</td> -->
+    <!-- Tru64 UNIX -->
+    <td>X</td>
+    <!-- Windows -->
+  </tr>
+  <!-- Release-specific table entry ends here -->
+  <tr valign="top" align="center"> 
+    <td width="343" align="left" class=release-number> <a href="#8.5.200.95">8.5.200.95 
+      [06/02/2014] &ndash; General</a> </td>
+    <td>&nbsp;</td>
+    <!-- AIX -->
+    <td>&nbsp;</td>
+    <!-- HP-UX PA -->
+    <td>&nbsp;</td>
+    <!-- HP-UX IPF -->
+    <td>X</td>
+    <!-- Linux -->
+    <td>&nbsp;</td>
+    <!-- Solaris -->
+    <!-- <td>X</td> -->
+    <!-- Tru64 UNIX -->
+    <td>X</td>
+    <!-- Windows -->
+  </tr>
+  <!-- Release-specific table entry ends here -->
+</table>
+<br/>
+<!-- End of table of supported Operating Systems -->
+
+<a href="#issues">
+Known Issues and Recommendations
+</a><br/>
+<a href="#discontinued">
+Discontinued Support
+</a><br/>
+<a href="#international">
+Internationalization
+</a><br/>
+<a href="#information">
+Additional Information
+</a><br/><br/>
+
+<hr class="section-divider">
+<!--End of Table of Contents. -->
+
+<!-- Introduction starts here. -->
+
+<a name=introduction></a>
+<h3>
+Introduction
+</h3>
+
+<!-- Standard sentence. Do not change, except to indicate the name of your component. -->
+
+<p>
+This release note applies to all 8.5 releases of Genesys WebRTC Gateway.</p>
+
+<ul class=square-bullet>
+  <li>Links in the Contents section enable you to access information
+    regarding a specific release. Releases are listed by version
+    number rather than in date order. For this reason, a recent
+    release may be listed after earlier releases, if the version
+    number is lower. Except when otherwise noted in the information
+    for a specific release, each release includes all of the features
+    and corrections that were introduced for the applicable operating
+    system at earlier dates, regardless of the version numbering.</li>
+  <li>The Release Number table lists the supported operating systems
+    for each release at a high level. For more detailed information,
+    see the <a href="http://docs.genesys.com/MoreDocs/Genesys_Supported_Operating_Environment_Reference_Guide">
+    <em>Genesys Supported Operating Environment Reference Guide</em></a>.
+  </li>
+  <!-- Standard sentence. Do not change. -->
+  <li> The Known Issues and Recommendations section is a cumulative
+    list. It includes information on when individual items were
+    found and, if applicable, corrected.</li>
+   <li>The Corrections and Modifications
+    section for each release may list additional issues that were
+    corrected without first being documented as Known Issues.
+  </li>
+  <!-- Standard sentence. Do not change. -->
+  <li> The Discontinued Support section is cumulative. It lists
+    functionality that is no longer supported and the release
+    number of the version in which support was discontinued. </li>
+</ul>
+
+<!-- Standard sentence. Do not change. -->
+<h4>
+Use of Third-Party Software
+</h4>
+<p>
+Genesys follows applicable third-party redistribution policies to the extent
+that Genesys solutions utilize third-party functionality. For specific
+information on any third-party software used in this product, see the
+<a href="http://docs.genesys.com/Documentation/WRTC#WRTC8.5README">Read Me</a>.
+Please contact your Genesys Customer Care representative if you have any
+questions.</p>
+
+<hr class="section-divider">
+<!--End of Introduction. -->
+<!-- Release Information Section for 8.5.2xx.xx-->
+<div class=light-background> <a name="8.5.2xx.xx" id="8.5.2xx.xx"></a> 
+  <h3> Release Number 8.5.204.88 [10/23/2015] &ndash; Hot Fix</h3>
+  <p> <a href="#supported8.5.2xx.xx"> Supported Operating Systems </a><br/>
+    <a href="#new8.5.2xx.xx"> New in This Release </a><br/>
+    <a href="#corrections8.5.2xx.xx"> Corrections and Modifications </a> </p>
+</div>
+<a name="supported8.5.2xx.xx" id="supported8.5.2xx.xx"></a> 
+<h4> Supported Operating Systems </h4>
+The operating systems supported by this release are listed in the <a href="#contents">Contents</a>, 
+above.<br/>
+<br/>
+<a name="new8.5.2xx.xx" id="new8.5.2xx.xx"></a> 
+<h4> New in This Release </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This is a hot fix for this product. This release contains no new features 
+  or functionality.
+  <!-- Beginning of "New In This Release" item -->
+  <!-- End of "New In This Release" item -->
+  <!-- Beginning of "New In This Release" item -->
+  <!-- End of "New In This Release" item -->
+</p>
+<!-- End of "New In This Release" section -->
+<a name="corrections8.5.2xx.xx" id="corrections8.5.2xx.xx"></a> 
+<!-- Beginning of "Corrections and Modifications" section -->
+<h4> Corrections and Modifications </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This release also includes the following corrections and modifications: </p>
+<hr class="item-separator">
+<!-- Beginning of "Corrections and Modifications" item -->
+<p> A new SIP <code>INVITE</code> that is immediately preceded by an SDP negotiation 
+  is now handled correctly by appropriate queuing. Previously in this scenario, 
+  the SIP <code>INVITE</code> was rejected with the error <code>486 Busy Here</code>. 
+  (MWA-499)</p>
+<hr class="item-separator">
+<p>WebRTC Gateway now checks configured media codecs&#8217; dynamic payload numbers 
+  and, if a number is out of range, it ignores the configured value and selects 
+  a valid value. Previously, the Gateway terminated when a dynamic payload number 
+  that was configured in the codecs configuration parameter was out of range. 
+  (MWA-500)</p>
+<hr class="item-separator">
+<p>A race condition related to SIP <code>CANCEL</code> no longer causes WebRTC 
+  Gateway to shut down unexpectedly. (MWA-504) </p>
+<hr class="item-separator">
+<p>The size of the message queue to the web client has been increased in order 
+  to avoid related failures. (MWA-505)</p>
+<hr class="item-separator">
+<p>The media-level tags that are used for media bundle support in an SDP <code>Answer</code> 
+  now match the tags in the SDP <code>Offer</code>. Previously, these tags were 
+  hardcoded to the tags used by Chrome. This hardcoding caused issues with Firefox, 
+  which recently added media <code>BUNDLE</code> support. (MWA-506)</p>
+<hr class="item-separator">
+<p>The Datagram Transport Layer Security (DTLS) establishment between WebRTC Gateway 
+  and Firefox version 38 and higher now works correctly when Firefox is in an 
+  active role, that is, when Firefox is the callee. (MWA-507)</p>
+<hr class="item-separator">
+<p>You can now use the <code>rsmp.sip-proxy</code> configuration parameter to 
+  specify two SIP Server addresses, separated by a comma, which will be used for 
+  High Availability. Only one of the SIP Servers will be active at any one time 
+  and, when a request to it times-out, the Gateway will start using the other 
+  SIP Server. Also, you can use the configuration parameter <code>rsmp.sip-proxy-srv</code> 
+  to configure the SRV address of the SIP Server. When a SIP request arrives from 
+  this SRV address, the response is sent to the currently active SIP Server address. 
+  (MWA-508) </p>
+<p>
+  <!-- End of "Corrections and Modifications" item -->
+  <!-- Beginning of "Corrections and Modifications" item -->
+  <!-- End of "Corrections and Modifications" item -->
+  <!-- Beginning of "Corrections and Modifications" item -->
+</p>
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- End of "Corrections and Modifications" section -->
+<p align="right" class=small-text> <a href="#top"> Top of Page </a> </p>
+<hr class="section-divider">
+<!--End of Introduction. -->
+<!-- Release Information Section for 8.5.203.14-->
+<div class=light-background> <a name="8.5.203.14" id="8.5.203.14"></a> 
+  <h3> Release Number 8.5.203.14 [03/24/2015] &ndash; General </h3>
+  <p> <a href="#supported8.5.203.14"> Supported Operating Systems </a><br/>
+    <a href="#new8.5.203.14"> New in This Release </a><br/>
+    <a href="#corrections8.5.203.14"> Corrections and Modifications </a> </p>
+</div>
+<a name="supported8.5.203.14" id="supported8.5.203.14"></a> 
+<h4> Supported Operating Systems </h4>
+The operating systems supported by this release are listed in the <a href="#contents">Contents</a>, 
+above.<br/>
+<br/>
+<a name="new8.5.203.14" id="new8.5.203.14"></a> 
+<h4> New in This Release </h4>
+<!-- Standard sentence. Do not change. -->
+<p> There are no restrictions for this release. This release contains no new features 
+  or functionality.</p>
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+  <!-- End of "New In This Release" item -->
+  <!-- Beginning of "New In This Release" item -->
+  <!-- End of "New In This Release" item -->
+</ul>
+<!-- End of "New In This Release" section -->
+<a name="corrections8.5.203.14" id="corrections8.5.203.14"></a> 
+<!-- Beginning of "Corrections and Modifications" section -->
+<h4> Corrections and Modifications </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This release also includes the following correction and modification: </p>
+<hr class="item-separator">
+<!-- Beginning of "Corrections and Modifications" item -->
+<p> Outbound calls using Broadsoft extensions and 3PCC now work properly. Previously, 
+  they could fail due to a race condition in the WebRTC Gateway. (MWA-477)</p>
+<!-- End of "Corrections and Modifications" item -->
+<!-- Beginning of "Corrections and Modifications" item -->
+<!-- End of "Corrections and Modifications" item -->
+<!-- Beginning of "Corrections and Modifications" item -->
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- End of "Corrections and Modifications" section -->
+<p align="right" class=small-text> <a href="#top"> Top of Page </a> </p>
+<hr class="section-divider">
+<!--End of Introduction. -->
+<!-- Release Information Section for 8.5.202.44-->
+<div class=light-background> <a name="8.5.202.44" id="8.5.202.44"></a> 
+  <h3> Release Number 8.5.202.44 [12/12/2014] &ndash; Hot Fix</h3>
+  <p> <a href="#supported8.5.202.44"> Supported Operating Systems </a><br/>
+    <a href="#new8.5.202.44"> New in This Release </a><br/>
+    <a href="#corrections8.5.202.44"> Corrections and Modifications </a> </p>
+</div>
+<a name="supported8.5.202.44" id="supported8.5.202.44"></a> 
+<h4> Supported Operating Systems </h4>
+The operating systems supported by this release are listed in the <a href="#contents">Contents</a>, 
+above.<br/>
+<br/>
+<a name="new8.5.202.44" id="new8.5.202.44"></a> 
+<h4> New in This Release </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This is a hot fix for this product. This release contains no new features 
+  or functionality.</p>
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+  <!-- End of "New In This Release" item -->
+</ul>
+<!-- End of "New In This Release" section -->
+<a name="corrections8.5.202.44" id="corrections8.5.202.44"></a> 
+<!-- Beginning of "Corrections and Modifications" section -->
+<h4> Corrections and Modifications </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This release also includes the following corrections and modifications: </p>
+<hr class="item-separator">
+<!-- Beginning of "Corrections and Modifications" item -->
+<p>A conferencing issue no longer occurs when using WebRTC Gateway with Chrome 
+  version 36 or later. Previously, the following issue occurred:</p>
+<ol>
+  <li>Inbound call was answered by Agent1.</li>
+  <li>Agent1 consulted with Agent2.</li>
+  <li>Agent1 completed conference.</li>
+  <li>Agent1 could not hear Caller and Agent2.</li>
+</ol>
+<p>(MWA-456)</p>
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- Beginning of "Corrections and Modifications" item -->
+<p>Possible issues in Chrome with SRTP are now avoided during hold and resume 
+  operations when music on hold is enabled. Previously, this may have caused issues 
+  when the media source changed on the SIP side, as delayed packets from the old 
+  media source may have been forwarded to the web client. (MWA-454) 
+<hr class="item-separator">
+<p>DTLS establishment in the WebRTC Gateway now happens quickly and consistently. 
+  Previously, it could be arbitrarily delayed when the Gateway was running on 
+  a Linux system. (MWA-464)
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- Beginning of "Corrections and Modifications" item -->
+<p align="right" class=small-text> <a href="#top"> Top of Page </a> </p>
+<hr class="section-divider">
+<!--End of Introduction. -->
+
+<!-- Release Information Section for 8.5.201.90 -->
+
+<div class=light-background>
+<a name="8.5.201.90"></a>
+  <h3> Release Number 8.5.201.95 [10/06/2014] &ndash; General </h3>
+
+<p>
+<a href="#supported8.5.201.90">
+Supported Operating Systems
+</a><br/>
+
+<a href="#new8.5.201.90">
+New in This Release
+</a><br/>
+
+<a href="#corrections8.5.201.90">
+Corrections and Modifications
+</a>
+</p>
+</div>
+
+<a name="supported8.5.201.90"></a>
+<h4>
+Supported Operating Systems
+</h4>
+
+The operating systems supported by this release are listed
+in the <a href="#contents">Contents</a>, above.<br/><br/>
+
+<a name="new8.5.201.90"></a>
+<h4>
+New in This Release
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+There are no restrictions for this release. This section describes new features
+that were introduced in this release of Genesys WebRTC Gateway.
+</p>
+
+<ul class=square-bullet>
+
+<!-- Beginning of "New In This Release" item -->
+
+        
+  <li>The Genesys WebRTC Gateway now supports adding video to an audio-only call.</li>
+
+<!-- End of "New In This Release" item -->
+
+
+<!-- Beginning of "New In This Release" item -->
+
+        
+  <li>The Genesys WebRTC Gateway now supports remote CTI control by providing 
+    the SIP extensions event package known as the BroadSoft SIP extensions.</li>
+
+<!-- End of "New In This Release" item -->
+
+
+</ul>
+
+<!-- End of "New In This Release" section -->
+
+<a name="corrections8.5.201.90"></a>
+<!-- Beginning of "Corrections and Modifications" section -->
+
+
+<h4>
+Corrections and Modifications
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p>
+This release also includes the following corrections and modifications:
+</p>
+
+  <hr class="item-separator">
+
+  <!-- Beginning of "Corrections and Modifications" item -->
+  
+<p>When video is disabled and then re-enabled from the SIP-side during a call 
+  using DTLS and media-bundle, the video now plays correctly on the web-side. 
+  Previously, the video would not play correctly on the web-side under these circumstances. 
+  Also, if you carry out hold and resume operations with music-on-hold while using 
+  DTLS, these operations now work correctly. (MWA-437)</p>
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+  <!-- Beginning of "Corrections and Modifications" item -->
+
+<p>You can now use the <code>web-ice-addresses</code> configuration parameter
+  to specify multiple local IP addresses for use by the ICE library. The WebRTC
+  Gateway also supports HTTP OPTIONS. (MWA-438)
+
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+<!-- Beginning of "Corrections and Modifications" item -->
+<p>When using the Chrome web browser, if you re-enable video after disabling it,
+Chrome receives video from the peer, as expected. However, it will not send
+video to the peer, due to
+<a href="https://code.google.com/p/webrtc/issues/detail?id=2136">WebRTC issue
+2136</a>. (MWA-442)</p>
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+<!-- End of "Corrections and Modifications" section -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!--End of Release Information Section for 8.5.201.90-->
+
+<!-- Release Information Section for 8.5.201.30 -->
+
+<div class=light-background>
+<a name="8.5.201.30"></a>
+<h3>
+Release Number 8.5.201.30 [07/18/2014] &ndash; General
+</h3>
+
+<p>
+<a href="#supported8.5.201.30">
+Supported Operating Systems
+</a><br/>
+
+<a href="#new8.5.201.30">
+New in This Release
+</a><br/>
+
+<a href="#corrections8.5.201.30">
+Corrections and Modifications
+</a>
+</p>
+</div>
+
+<a name="supported8.5.201.30"></a>
+<h4>
+Supported Operating Systems
+</h4>
+
+The operating systems supported by this release are listed
+in the <a href="#contents">Contents</a>, above.<br/><br/>
+
+<a name="new8.5.201.30"></a>
+<h4>
+New in This Release
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+There are no restrictions for this release. This section describes new features
+that were introduced in this release of Genesys WebRTC Gateway.
+</p>
+
+<ul class=square-bullet>
+
+<!-- Beginning of "New In This Release" item -->
+
+        <li>Support for third-party call control (3pcc) basic functions and two-step procedures</li>
+
+<!-- End of "New In This Release" item -->
+
+
+</ul>
+
+<!-- End of "New In This Release" section -->
+
+<a name="corrections8.5.201.30"></a>
+<!-- Beginning of "Corrections and Modifications" section -->
+
+
+<h4>
+Corrections and Modifications
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p>
+This release also includes the following corrections and modifications:
+</p>
+
+  <hr class="item-separator">
+
+  <!-- Beginning of "Corrections and Modifications" item -->
+  <p>Video media are now correctly played when a callee sends a new mid-call
+  offer. Previously, video media were not always played when a new offer was
+  sent. ICE checks are also now only carried out once during session
+  renegotiation, unless more than one ICE check is required. (MWA-390)</p>
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+  <!-- Beginning of "Corrections and Modifications" item -->
+  <p>New media streams (for example, video) can now be added to a call
+  when using DTLS-SRTP. Support for a new <code>PeerConnection</code> by
+  re-establishing DTLS for all media streams has also been added.  This is needed
+  with browsers that do not support call renegotiation, such as Firefox (as
+  explained in Firefox
+  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=857115">Bug
+  857115</a>). (MWA-392)</p>
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+<!-- End of "Corrections and Modifications" section -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!--End of Release Information Section for 8.5.201.30-->
+
+<!-- Release Information Section for 8.5.200.95 -->
+
+<div class=light-background>
+<a name="8.5.200.95"></a>
+<h3>
+Release Number 8.5.200.95 [06/02/2014] &ndash; General
+</h3>
+
+<p>
+<a href="#supported8.5.200.95">
+Supported Operating Systems
+</a><br/>
+
+<a href="#new8.5.200.95">
+New in This Release
+</a><br/>
+
+<a href="#corrections8.5.200.95">
+Corrections and Modifications
+</a>
+</p>
+</div>
+
+<a name="supported8.5.200.95"></a>
+<h4>
+Supported Operating Systems
+</h4>
+
+The operating systems supported by this release are listed
+in the <a href="#contents">Contents</a>, above.<br/><br/>
+
+<a name="new8.5.200.95"></a>
+<h4>
+New in This Release
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+There are no restrictions for this release. This section describes new features
+that were introduced in this initial 8.5 release of Genesys WebRTC Gateway.
+</p>
+
+<ul class=square-bullet>
+
+<!-- Beginning of "New In This Release" item -->
+
+        <li><p>Communications:</p>
+            <ul class=square-bullet>
+                <li><p>Supports two-way audio-only calls</p></li>
+                <li><p>Supports two-way audio and video calls</p></li>
+                <li><p>Supports transcoding on supported media types in both directions</p></li>
+                <li><p>Supports transitions between audio-only and video/audio
+                sessions (within browser limitations)</p></li>
+                <li><p>Supports incoming calls from either the web or the SIP side</p></li>
+                <li><p>Supports sending context data from a web client to the
+                SIP Server as attached data when a call is established</p></li>
+                <li><p>Supports sending mid-call user data either to SIP Server
+                as mapped data, or to the remote peer</p></li>
+		        <li><p>Supports call transfer with Genesys SIP Server</p></li>
+		        <li><p>Supports sending DTMF tones as telephone-events</p></li>
+            </ul>
+        </li>
+        <li><p>Web browser support:</p>
+            <ul class=square-bullet>
+                <li><p>Google Chrome</p></li>
+                <li><p>Google Chrome for Android</p></li>
+                <li><p>Mozilla Firefox</p></li>
+                <li><p>Mozilla Firefox for Android</p></li>
+				<li><p>Opera (Desktop and Mobile)</p></li>
+            </ul>
+        </li>
+        <li><p>Supports anonymous access from the web (such as in click-to-dial scenarios)</p></li>
+        <li><p>Flexible deployment on:</p>
+            <ul class=square-bullet>
+                <li><p>A dedicated server</p></li>
+                <li><p>A shared server with other Genesys components</p></li>
+                <li><p>Multiple load-balanced instances for scalability</p></li>
+            </ul>
+        </li>
+        <li><p>Security:</p>
+            <ul class=square-bullet>
+                <li><p>HTTPS, SIP TLS, and secured connection to Configuration Server</p></li>
+                <li><p>Web-side encryption of RTP traffic according to IETF
+                recommendations (SDES-SRTP and DTLS-SRTP)</p></li>
+                <li><p>Can be configured to use SIP-side SRTP when outside the trusted area</p></li>
+                <li><p>Supports Client Side Port Definition (CSPD), allowing for customization of the:</p>
+                        <ul class=square-bullet>
+                        <li><p>SIP-side RTP port</p></li>
+                        <li><p>Web-side RTP port</p></li>
+                        <li><p>Transport address and port for a client-side connection</p></li>
+                        </ul>
+                </li>
+                <li><p>Use of multiple NICs, to separate public and private interfaces when both are used (DMZ deployment)</p></li>
+                <li><p>Firewall traversal with support of ICE</p></li>
+            </ul>
+        </li>
+        <li><p>Codecs:</p>
+            <ul class=square-bullet>
+                <li><p>G.711 A-law and µ-Law audio format</p></li>
+                <li><p>G.729 audio on SIP/RTP side</p></li>
+                <li><p>H.264 profiles up to and including Profile 3.1 on SIP/RTP side</p></li>
+                <li><p>VP8 video</p></li>
+                <li><p>Real-Time media transcoding whenever required</p></li>
+                <li><p>RTCP AVPF (partially supported)</p></li>
+                <li><p>telephone-events</p></li>
+            </ul>
+        </li>
+        <li><p>Support of HTTP over IPv4 and IPv6 interfaces in the same instance</p></li>
+        <li><p>Integration with Genesys Management Framework</p></li>
+        <li><p>SNMP for alarms, traps and MIBs</p></li>
+        <li><p>Platforms:</p>
+            <ul class=square-bullet>
+                <li><p>Windows Server 2008 32- and 64-bit</p></li>
+                <li><p>RedHat Linux 6.0 64-bit</p></li>
+                <li><p>VMWare ESXi 5</p></li>
+            </ul>
+        </li>
+
+        <li><p>The WebRTC Gateway is built with OpenSSL library version 1.0.1g.
+        This version of OpenSSL is not affected by the
+        <a href="https://www.openssl.org/news/secadv_20140407.txt">TLS heartbeat read
+        overrun issue</a>.</p>
+        </li>
+
+        <li><p>The WebRTC Gateway supports receiving INFO data in
+        www-form-urlencoded format from the browser in the middle of a call,
+        and forwarding it to the SIP Server using the SIP INFO method.</p></li>
+
+        <li><p>The WebRTC Gateway accepts <code>+</code> as a valid first character
+        of a DN.</p></li>
+
+        <li><p>The WebRTC Gateway includes support for Cross-Origin Resource
+        Sharing (CORS).</p></li>
+
+<!-- End of "New In This Release" item -->
+
+
+</ul>
+
+<!-- End of "New In This Release" section -->
+
+<a name="corrections8.5.200.95"></a>
+<!-- Beginning of "Corrections and Modifications" section -->
+
+
+<h4>
+Corrections and Modifications
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p>
+This first release of this product does not include any corrections or modifications.
+</p>
+
+<!-- End of "Corrections and Modifications" section -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!--End of Release Information Section for 8.5.200.95-->
+
+<!-- Known Issues and Recommendations section starts here. -->
+
+<a name=issues></a>
+<h3>
+Known Issues and Recommendations
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+This section provides the latest information on known issues and
+recommendations associated with this product.
+</p>
+
+<!--If there are no items to document, retain the gray divider lines and insert
+“There are no known issues or recommendations for this product.” between them. -->
+
+<hr class="item-separator">
+<!--  Beginning of known issues item -->
+<p>The Chrome browser, since version 47, supports user media operations only from 
+  secure origin. If you are using Genesys WebRTC service with Chrome browser version 
+  47 or higher, you must use HTTPS for the application server, as well as the 
+  WebRTC Gateway. To do this, configure the WebRTC Gateway and set up the application 
+  server with the appropriate security certificates as described in the <a href="http://docs.genesys.com/Documentation/WRTC/8.5.2/Deployment/Welcome"><em>Genesys 
+  WebRTC Service Deployment Guide</em></a>.</p>
+<hr class="item-separator">
+<p>The following conferencing issue occurs when using WebRTC Gateway with Chrome 
+  version 36 or 37 (latest stable version):</p>
+<ol>
+  <li>Inbound call is answered by Agent1.</li>
+  <li> Agent1 consults with Agent2. </li>
+  <li>Agent1 completes conference.</li>
+  <li> Agent1 cannot hear Caller and Agent2.</li>
+  <li> Agent2 and Caller can hear each other, and they can also hear Agent1.</li>
+</ol>
+<p>To work around this issue, Agent1 can hold and then resume the call, and all 
+  three parties will be able to hear each other.</p>
+<p> (MWA-456)</p>
+<table width="336" border="0">
+  <tr> 
+    <td width="196" class=small-text> <b>Found In:</b>&nbsp;8.5.201.95</td>
+    <td width="130" class=small-text> <b>Fixed In:</b>&nbsp; 8.5.202.44</td>
+  </tr>
+</table>
+<hr class="item-separator">
+<p>Google Chrome has several outstanding issues that affect the WebRTC Gateway, 
+  including the following: </p>
+<ul>
+  <li> 
+    <p><a href="https://code.google.com/p/webrtc/issues/detail?id=2136"> Issue 
+      2136: Video fails to start again after being disabled</a></p>
+  </li>
+  <li><a href="https://code.google.com/p/webrtc/issues/detail?id=2350">Issue 2350: 
+    setLocalDescrioption failed if telephone-event payload type number changed 
+    during a session</a></li>
+</ul>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+<!--  Beginning of known issues item -->
+
+<p>
+When you use the Genesys WebRTC Service and the Genesys Voice Platform Media
+Control Platform (MCP) on Red Hat Enterprise Linux (RHEL), Genesys recommends
+that MCP be run on a server that is separate from the server running the
+WebRTC Service, for two reasons:
+</p>
+
+<ul class=square-bullet>
+<li><p>MCP performance on RHEL 5.x is considerably better than on RHEL 6.x. However,
+the WebRTC Gateway only works on RHEL 6.x.</p></li>
+
+<li><p>MCP consumes the majority of the resources of the server it is hosted on,
+even under RHEL 5.x. Because of this, Genesys recommends&mdash;regardless of
+whether WebRTC is running in your environment&mdash;that MCP be placed on its
+own, separate machine.</p></li>
+</ul>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+<!--  Beginning of known issues item -->
+
+<p>
+The WebRTC Gateway displays a memory leak while running under Windows, due to an
+issue with the LibNice/GLib third-party library that is used by the Gateway.
+The amount of the leak varies with the call scenario being used. For example,
+for browser-to-browser call scenarios the observed leak is approximately 70
+bytes per audio-only call and approximately 800 bytes per audio-video call.
+</p>
+
+<p>
+If you are deploying the WebRTC Gateway in a Windows environment, Genesys
+recommends that you monitor memory and be prepared to restart the Gateway
+in cases where it becomes necessary to do so. (MWA-321)
+</p>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+<!--  Beginning of known issues item -->
+
+<p>
+Note that the WebRTC Gateway normally supports only the two most recent versions
+of supported browsers.
+</p>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!-- End of Known Issues and Recommendations section. -->
+
+<!-- Discontinued Support section starts here. -->
+
+<a name=discontinued></a>
+<h3>
+Discontinued Support
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+This section documents features that are no longer supported in this
+software. This cumulative list is in release-number order with the
+most recently discontinued features at the top of the list.
+</p>
+
+<!--If there are no items to document, retain the gray divider lines and insert
+“There are no discontinued items for this product.” between them.-->
+
+<hr class="item-separator">
+
+
+<!--  Beginning of Discontinued Support item -->
+
+<p>
+There are no discontinued items for this product.
+</p>
+
+<hr class="item-separator">
+<!--  End of Discontinued Support item -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!-- End of Discontinued Support section. -->
+
+<!-- Internationalization section starts here. -->
+
+<a name=international></a>
+<h3>
+Internationalization
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+Information in this section is included for international customers.
+</p>
+
+<!--If there are no items to document, retain the gray divider lines and insert
+“There are no internationalization issues for this product.” between them.-->
+
+
+<!--  Beginning of internationalization item -->
+
+
+<hr class="item-separator">
+
+<p>
+There are no internationalization issues for this product.
+</p>
+
+<hr class="item-separator">
+<!--  End of internationalization item -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!-- End of Internationalization section. -->
+
+<!-- Additional Information section starts here. -->
+
+<a name=information></a>
+<h3>
+Additional Information
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+Additional information on Genesys Telecommunications Laboratories, Inc. is
+available on our <a href="http://genesys.com/customer-care"> Customer Care website</a>.
+The following documentation also contains information about this software. Please
+consult the <em>Deployment Guide</em> first.
+</p>
+
+<ul class=square-bullet>
+
+<!--  Beginning of "Additional Information" item -->
+
+<li><p>
+The
+<a href="http://docs.genesys.com/Documentation/WRTC/8.5.2/Deployment/Welcome"><em>Genesys
+WebRTC Service Deployment Guide</em></a> gives you the information that you need to
+get started with Genesys WebRTC Service. This document contains product overview
+information, as well as deployment details.
+</p></li>
+<!--  End of "Additional Information" item -->
+
+<!--  Beginning of "Additional Information" item -->
+<li><p>
+The
+<a href="http://docs.genesys.com/Documentation/WRTC/8.5.2/Developer/Welcome"><em>Genesys
+WebRTC Service Developer's Guide</em></a> gives you the information that you need to
+customize Genesys WebRTC Service.
+</p></li>
+<!--  End of "Additional Information" item -->
+
+</ul>
+
+<p>Product documentation is provided on the <a href="http://genesys.com/customer-care">Customer
+  Care website</a>, the <a href="http://docs.genesys.com">Genesys Documentation
+  website</a>, and the Documentation Library DVD (produced monthly).</p>
+
+<p><b>Note:</b> For the DVD, the <i>New Documents on this DVD</i> page indicates
+  the production date for that disc. Due to disc production schedules, documentation
+  on the Genesys Documentation website may be more up-to-date than what is available
+  on disc immediately after a product is released or updated. To determine the
+  version of a document, check the version number that is located on the second
+  page in PDFs or on the <i>About This File</i> topic in Help files.</p>
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class=big-rule>
+<!-- End of Additional Information section. -->
+
+</body>
+</html>

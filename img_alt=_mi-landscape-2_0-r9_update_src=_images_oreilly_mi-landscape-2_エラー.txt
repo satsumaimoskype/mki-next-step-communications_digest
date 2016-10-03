@@ -1,0 +1,4 @@
+ペイントで見てサイズが大きい画像は表示できない。小さくするとよい。
+
+  <img alt="mi-landscape-2.0-r9_update" src="./images/oreilly/mi-landscape-2.0-r9_update.jpg" height="400" width="560">  
+

@@ -1,0 +1,970 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=ISO-8859-1">
+
+<!-- **** Embedded style definition section starts here. *****-->
+
+<style type = "text/css">
+
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		}
+
+	a:link, a:active {
+		color: #002a95;
+		}
+
+	h1, h3, a:visited {
+		color: #004d95;
+		}
+
+	.dark-background	 {
+		color: #ffffff;
+		background-color: #004d95;
+		height: 1.25em
+		}
+
+	.light-background	 {
+		background-color: #cccccc;
+		border: 1px #cccccc solid;
+		}
+
+	.light-background h3, .light-background p {
+		margin-left: .35em;
+		}
+
+	code  {
+		font-size:       115%;
+		letter-spacing: -1px;
+		line-height:     100%;
+		  }
+
+	.square-bullet {
+		list-style-type: square;
+		}
+
+	.big-rule {
+		margin-top: -1%;
+		margin-bottom: -1%;
+		color: #004d95;
+		background-color: #004d95;
+		height: 20px;
+	   }
+
+	.section-divider {
+		border: 0;
+		color: #004d95;
+		background-color: #004d95;
+		height: 2px;
+	   }
+
+	.item-separator {
+		border: 0;
+		color: #999999;
+		background-color: #999999;
+		height: 2px;
+		width: 35%;
+	   }
+
+	.small-text {
+		font-size: 80%;
+		}
+
+	.small-text b {
+		color: #004d95;
+		}
+
+	.os-table {
+		font-weight: bold;
+		font-size: 80%;
+		}
+
+	.release-number {
+		font-weight: normal;
+		}
+
+	.description {
+		color: #A01C6D;
+		font-weight: bold;
+		}
+
+</style>
+<!-- **** End of embedded style definition. ***** -->
+
+<title>Genesys WebRTC JavaScript API 8.5.x Release Note</title>
+</head>
+
+<body>
+
+<hr class=big-rule>
+
+<div align=center>
+<a name=top></a>
+<h1>
+Release Note
+</h1>
+
+<h2>
+Genesys WebRTC JavaScript API
+</h2>
+
+<h2>
+8.5.x
+</h2>
+</div>
+
+<div align=center> 
+  <h3 class=dark-background> <b> <font size=2>Genesys Telecommunications Laboratories, 
+    Inc. &copy; 2014&#8211;2015</font> </b> </h3>
+</div>
+
+<!-- Table of Contents starts here. -->
+
+<a name=contents></a><h3>
+Contents
+</h3>
+<a href="#introduction">
+Introduction
+</a><br/><br/>
+
+<!-- Table of supported Operating Systems -->
+
+<a name=os-support></a>
+<table class=os-table border="1">
+  <tr align="center" bgcolor="#004d95"> 
+    <td width="343" align="left" bgcolor="#FFFFFF"> <font color="#004d95">Release 
+      Number</font> </td>
+    <th width="50"><font color="#FFFFFF"> AIX </font></th>
+    <th width="70"><font color="#FFFFFF"> HP-UX PA </font></th>
+    <th width="70"><font color="#FFFFFF"> HP-UX IPF </font></th>
+    <th width="67"><font color="#FFFFFF"> Linux </font></th>
+    <th width="68"><font color="#FFFFFF"> Solaris </font></th>
+    <!--
+<th width="88"><font color="#FFFFFF">
+Tru64 UNIX
+</font></th>
+-->
+    <th width="85"><font color="#FFFFFF"> Windows </font></th>
+  </tr>
+  <tr valign="top" align="center">
+    <td align="left" class=release-number><a href="#8.5.2xx.xx">8.5.210.16 [10/23/2015] 
+      &ndash; Hot Fix</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr valign="top" align="center"> 
+    <td align="left" class=release-number><a href="#8.5.210.08">8.5.210.08 [03/24/2015] 
+      &ndash; General </a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr valign="top" align="center"> 
+    <td align="left" class=release-number><a href="#8.5.210.07">8.5.210.07 [12/12/2014] 
+      &ndash; Hot Fix</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr valign="top" align="center"> 
+    <td width="343" align="left" class=release-number> <a href="#8.5.210.03">8.5.210.03 
+      [10/06/2014] &ndash; General</a> </td>
+    <td>&nbsp;</td>
+    <!-- AIX -->
+    <td>&nbsp;</td>
+    <!-- HP-UX PA -->
+    <td>&nbsp;</td>
+    <!-- HP-UX IPF -->
+    <td>X</td>
+    <!-- Linux -->
+    <td>&nbsp;</td>
+    <!-- Solaris -->
+    <!-- <td>X</td> -->
+    <!-- Tru64 UNIX -->
+    <td>X</td>
+    <!-- Windows -->
+  </tr>
+  <!-- Release-specific table entry ends here -->
+  <tr valign="top" align="center"> 
+    <td width="343" align="left" class=release-number> <a href="#8.5.200.10">8.5.200.10 
+      [07/18/2014] &ndash; General</a> </td>
+    <td>&nbsp;</td>
+    <!-- AIX -->
+    <td>&nbsp;</td>
+    <!-- HP-UX PA -->
+    <td>&nbsp;</td>
+    <!-- HP-UX IPF -->
+    <td>X</td>
+    <!-- Linux -->
+    <td>&nbsp;</td>
+    <!-- Solaris -->
+    <!-- <td>X</td> -->
+    <!-- Tru64 UNIX -->
+    <td>X</td>
+    <!-- Windows -->
+  </tr>
+  <!-- Release-specific table entry ends here -->
+  <tr valign="top" align="center"> 
+    <td width="343" align="left" class=release-number> <a href="#8.5.200.07">8.5.200.07 
+      [06/02/2014] &ndash; General</a> </td>
+    <td>&nbsp;</td>
+    <!-- AIX -->
+    <td>&nbsp;</td>
+    <!-- HP-UX PA -->
+    <td>&nbsp;</td>
+    <!-- HP-UX IPF -->
+    <td>X</td>
+    <!-- Linux -->
+    <td>&nbsp;</td>
+    <!-- Solaris -->
+    <!-- <td>X</td> -->
+    <!-- Tru64 UNIX -->
+    <td>X</td>
+    <!-- Windows -->
+  </tr>
+  <!-- Release-specific table entry ends here -->
+</table>
+<br/>
+<!-- End of table of supported Operating Systems -->
+
+<a href="#issues">
+Known Issues and Recommendations
+</a><br/>
+<a href="#discontinued">
+Discontinued Support
+</a><br/>
+<a href="#international">
+Internationalization
+</a><br/>
+<a href="#information">
+Additional Information
+</a><br/><br/>
+
+<hr class="section-divider">
+<!--End of Table of Contents. -->
+
+<!-- Introduction starts here. -->
+
+<a name=introduction></a>
+<h3>
+Introduction
+</h3>
+
+<!-- Standard sentence. Do not change, except to indicate the name of your component. -->
+
+<p>
+This release note applies to all 8.5 releases of Genesys WebRTC JavaScript API.</p>
+
+<ul class=square-bullet>
+  <li>Links in the Contents section enable you to access information
+    regarding a specific release. Releases are listed by version
+    number rather than in date order. For this reason, a recent
+    release may be listed after earlier releases, if the version
+    number is lower. Except when otherwise noted in the information
+    for a specific release, each release includes all of the features
+    and corrections that were introduced for the applicable operating
+    system at earlier dates, regardless of the version numbering.</li>
+  <li>The Release Number table lists the supported operating systems
+    for each release at a high level. For more detailed information,
+    see the <a href="http://docs.genesys.com/MoreDocs/Genesys_Supported_Operating_Environment_Reference_Guide">
+    <em>Genesys Supported Operating Environment Reference Guide</em></a>.
+  </li>
+  <!-- Standard sentence. Do not change. -->
+  <li> The Known Issues and Recommendations section is a cumulative
+    list. It includes information on when individual items were
+    found and, if applicable, corrected.</li>
+   <li>The Corrections and Modifications
+    section for each release may list additional issues that were
+    corrected without first being documented as Known Issues.
+  </li>
+  <!-- Standard sentence. Do not change. -->
+  <li> The Discontinued Support section is cumulative. It lists
+    functionality that is no longer supported and the release
+    number of the version in which support was discontinued. </li>
+</ul>
+
+<!-- Standard sentence. Do not change. -->
+<h4>
+Use of Third-Party Software
+</h4>
+<p>
+Genesys follows applicable third-party redistribution policies to the extent
+that Genesys solutions utilize third-party functionality. For specific
+information on any third-party software used in this product, see the
+<a href="http://docs.genesys.com/Documentation/WRTC#WRTC8.5README">Read Me</a>.
+Please contact your Genesys Customer Care representative if you have any
+questions.</p>
+
+<hr class="section-divider">
+<!--End of Introduction. -->
+<!-- Release Information Section for 8.5.210.08-->
+<div class=light-background> <a name="8.5.2xx.xx" id="8.5.2xx.xx"></a> 
+  <h3> Release Number 8.5.210.16 [10/23/2015] &ndash; Hot Fix</h3>
+  <p> <a href="#supported8.5.2xx.xx"> Supported Operating Systems </a><br/>
+    <a href="#new8.5.2xx.xx"> New in This Release </a><br/>
+    <a href="#corrections8.5.2xx.xx"> Corrections and Modifications </a> </p>
+</div>
+<a name="supported8.5.2xx.xx" id="supported8.5.2xx.xx"></a> 
+<h4> Supported Operating Systems </h4>
+The operating systems supported by this release are listed in the <a href="#contents">Contents</a>, 
+above.<br/>
+<br/>
+<a name="new8.5.2xx.xx" id="new8.5.2xx.xx"></a> 
+<h4> New in This Release </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This is a hot fix for this product. This release contains no new features 
+  or functionality.</p>
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+</ul>
+<!-- End of "New In This Release" section -->
+<a name="corrections8.5.2xx.xx" id="corrections8.5.2xx.xx"></a> 
+<h4> Corrections and Modifications </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This release includes the following corrections and modifications: </p>
+<hr class="item-separator">
+<!-- Beginning of "Corrections and Modifications" item -->
+<p>New calls are no longer affected when a previous call is dropped that had been 
+  muted using the JavaScript API <code>updateCall()</code> method. Previously, 
+  a new call using the same client was still muted. (MWA-509)</p>
+<hr class="item-separator">
+<p>WebRTC JavaScript API now throws a <code>grtcClient.onConnectionError</code> 
+  event when a hanging <code>GET</code> connection to the WebRTC Gateway fails. 
+  This enables the application to handle such a failure. Previously, the failure 
+  was silently ignored. (MWA-510)</p>
+<hr class="item-separator">
+<p>WebRTC JavaScript API no longer waits for ICE candidate gathering when it is 
+  not needed; for example, during a session renegotiation, given a new media type 
+  is not being added or media bundle is being used. Previously, a Chrome issue 
+  occurred where ICE candidate gathering did not complete in some scenarios. (MWA-511)</p>
+<hr class="item-separator">
+<p>Downgrading a video call to an audio-only call now works correctly with Chrome. 
+  Previously, it could have resulted in one-way audio due to Chrome still having 
+  video in the SDP offer. (MWA-514)</p>
+<hr class="item-separator">
+<p>The RTP <code>proto</code> value <code>UDP/TLS/RTP/SAVPF</code> in an SDP offer, 
+  created by Chrome version 46 and higher, is now handled correctly. Without this, 
+  a call from Chrome 46 failed with a <code>NOMATCH</code> error from the gateway. 
+  (MWA-515)</p>
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- End of "Corrections and Modifications" section -->
+<p align="right" class=small-text> <a href="#top"> Top of Page </a> </p>
+<hr class="section-divider">
+<!--End of Introduction. -->
+<!-- Release Information Section for 8.5.210.08-->
+<div class=light-background> <a name="8.5.210.08" id="8.5.210.08"></a> 
+  <h3> Release Number 8.5.210.08 [03/24/2015] &ndash; General </h3>
+  <p> <a href="#supported8.5.210.08"> Supported Operating Systems </a><br/>
+    <a href="#new8.5.210.08"> New in This Release </a><br/>
+    <a href="#corrections8.5.210.08"> Corrections and Modifications </a> </p>
+</div>
+<a name="supported8.5.210.08" id="supported8.5.210.08"></a> 
+<h4> Supported Operating Systems </h4>
+The operating systems supported by this release are listed in the <a href="#contents">Contents</a>, 
+above.<br/>
+<br/>
+<a name="new8.5.210.08" id="new8.5.210.08"></a> 
+<h4> New in This Release </h4>
+<!-- Standard sentence. Do not change. -->
+<p> There are no restrictions for this release. This release contains no new features 
+  or functionality.</p>
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+</ul>
+<!-- End of "New In This Release" section -->
+<a name="corrections8.5.210.08" id="corrections8.5.210.08"></a> 
+<h4> Corrections and Modifications </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This release includes the following correction or modification: </p>
+<hr class="item-separator">
+<!-- Beginning of "Corrections and Modifications" item -->
+<p> Outbound calls using Broadsoft extensions and 3PCC now work properly. Previously, 
+  they could fail due to a race condition in the WebRTC Gateway. (MWA-477)</p>
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- End of "Corrections and Modifications" section -->
+<p align="right" class=small-text> <a href="#top"> Top of Page </a> </p>
+<hr class="section-divider">
+<!--End of Introduction. -->
+<!-- Release Information Section for 8.5.210.07-->
+<div class=light-background> <a name="8.5.210.07" id="8.5.210.07"></a> 
+  <h3> Release Number 8.5.210.07 [12/12/2014] &ndash; Hot Fix</h3>
+  <p> <a href="#supported8.5.210.07"> Supported Operating Systems </a><br/>
+    <a href="#new8.5.210.07"> New in This Release </a><br/>
+    <a href="#corrections8.5.210.07"> Corrections and Modifications </a> </p>
+</div>
+<a name="supported8.5.210.07" id="supported8.5.210.07"></a> 
+<h4> Supported Operating Systems </h4>
+The operating systems supported by this release are listed in the <a href="#contents">Contents</a>, 
+above.<br/>
+<br/>
+<a name="new8.5.210.07" id="new8.5.210.07"></a> 
+<h4> New in This Release </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This is a hot fix for this product. This release contains no new features 
+  or functionality.</p>
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+  <p> 
+  <!-- End of "New In This Release" item -->
+</ul>
+<!-- End of "New In This Release" section -->
+<a name="corrections8.5.210.07" id="corrections8.5.210.07"></a> 
+<h4> Corrections and Modifications </h4>
+<!-- Standard sentence. Do not change. -->
+<p> This release includes the following corrections or modifications: </p>
+<hr class="item-separator">
+<!-- Beginning of "Corrections and Modifications" item -->
+<p>The ICE gathering timer is now cleared in all scenarios. (MWA-469)</p>
+<hr class="item-separator">
+<p>A workaround for Chrome <a href="https://code.google.com/p/webrtc/issues/detail?id=3962">Issue 
+  3962</a> is now included, which will avoid renegotiation failures when the VP8 
+  payload type in the original offer is not <code>100</code>.</p>
+<p>A workaround for Firefox is now included, which will avoid media issues by 
+  setting the video port to <code>0</code> in the answer SDP, when there is no 
+  local video stream and the application has set the <code>OfferToReceiveVideo</code> 
+  constraint for creating answer SDP to <code>false</code>.</p>
+<p>(MWA-470) </p>
+<hr class="item-separator">
+<!-- End of "Corrections and Modifications" item -->
+<!-- End of "Corrections and Modifications" section -->
+<p align="right" class=small-text> <a href="#top"> Top of Page </a> </p>
+<hr class="section-divider">
+<!--End of Introduction. -->
+
+<!-- Release Information Section for 8.5.210.03 -->
+
+<div class=light-background>
+<a name="8.5.210.03"></a>
+  <h3> Release Number 8.5.210.03 [10/06/2014] &ndash; General </h3>
+
+<p>
+<a href="#supported8.5.210.03">
+Supported Operating Systems
+</a><br/>
+
+<a href="#new8.5.210.03">
+New in This Release
+</a><br/>
+
+<a href="#corrections8.5.210.03">
+Corrections and Modifications
+</a>
+</p>
+</div>
+
+<a name="supported8.5.210.03"></a>
+<h4>
+Supported Operating Systems
+</h4>
+
+The operating systems supported by this release are listed
+in the <a href="#contents">Contents</a>, above.<br/><br/>
+
+<a name="new8.5.210.03"></a>
+<h4>
+New in This Release
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+There are no restrictions for this release. This section describes new features
+that were introduced in this release of Genesys WebRTC JavaScript API.
+</p>
+
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+  <li>
+    <p>The Genesys WebRTC JavaScript API now supports adding video to an audio-only 
+      call.</li>
+  <li>The Genesys WebRTC JavaScript API now supports automatically answering a
+    call, as well as placing a call on hold and resuming it, without direct user
+    interaction with the Web application. This feature works using remote CTI
+    control events <code>talk</code> and <code>hold</code> on the SIP-side, which are part of the Broadsoft
+    SIP Extensions.
+    <p> </li>
+  <!-- End of "New In This Release" item -->
+</ul>
+
+<!-- End of "New In This Release" section -->
+
+
+<a name="corrections8.5.210.03"></a>
+<h4>
+Corrections and Modifications
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p>
+This release includes the following correction or modification:
+</p>
+
+  <hr class="item-separator">
+
+  <!-- Beginning of "Corrections and Modifications" item -->
+  <p>The WebRTC JavaScript API now provides a configuration for the ICE candidate
+  gathering timer with a default timeout of 3 seconds. Without this timer, Chrome
+  may take up to 10 seconds for ICE candidate gathering, if the client machine
+  has many virtual network interfaces. (MWA-452)</p>
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+
+<!-- End of "Corrections and Modifications" section -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!--End of Release Information Section for 8.5.210.03-->
+
+<!-- Release Information Section for 8.5.200.10 -->
+
+<div class=light-background>
+<a name="8.5.200.10"></a>
+<h3>
+Release Number 8.5.200.10 [07/18/2014] &ndash; General
+</h3>
+
+<p>
+<a href="#supported8.5.200.10">
+Supported Operating Systems
+</a><br/>
+
+<a href="#new8.5.200.10">
+New in This Release
+</a><br/>
+
+<a href="#corrections8.5.200.10">
+Corrections and Modifications
+</a>
+</p>
+</div>
+
+<a name="supported8.5.200.10"></a>
+<h4>
+Supported Operating Systems
+</h4>
+
+The operating systems supported by this release are listed
+in the <a href="#contents">Contents</a>, above.<br/><br/>
+
+<a name="new8.5.200.10"></a>
+<h4>
+New in This Release
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p> There are no restrictions for this release. This release contains no new features 
+  or functionality.</p>
+
+<ul class=square-bullet>
+  <!-- Beginning of "New In This Release" item -->
+  <p> 
+  <!-- End of "New In This Release" item -->
+</ul>
+
+<!-- End of "New In This Release" section -->
+
+
+<a name="corrections8.5.200.10"></a>
+<h4>
+Corrections and Modifications
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p>
+This release also includes the following correction and modification:
+</p>
+
+  <hr class="item-separator">
+
+  <!-- Beginning of "Corrections and Modifications" item -->
+  <p>The JSAPI now correctly handles browser-generated <code>DeviceNotFound</code>
+  errors. (MWA-423)</p>
+  <hr class="item-separator">
+  <!-- End of "Corrections and Modifications" item -->
+
+
+<!-- End of "Corrections and Modifications" section -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!--End of Release Information Section for 8.5.200.10-->
+
+<!-- Release Information Section for 8.5.200.07 -->
+
+<div class=light-background>
+<a name="8.5.200.07"></a>
+<h3>
+Release Number 8.5.200.07 [06/02/2014] &ndash; General
+</h3>
+
+<p>
+<a href="#supported8.5.200.07">
+Supported Operating Systems
+</a><br/>
+
+<a href="#new8.5.200.07">
+New in This Release
+</a><br/>
+
+<a href="#corrections8.5.200.07">
+Corrections and Modifications
+</a>
+</p>
+</div>
+
+<a name="supported8.5.200.07"></a>
+<h4>
+Supported Operating Systems
+</h4>
+
+The operating systems supported by this release are listed
+in the <a href="#contents">Contents</a>, above.<br/><br/>
+
+<a name="new8.5.200.07"></a>
+<h4>
+New in This Release
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+There are no restrictions for this release. This section describes new features
+that were introduced in this initial 8.5 release of Genesys WebRTC JavaScript API.
+</p>
+
+<ul class=square-bullet>
+
+<!-- Beginning of "New In This Release" item -->
+
+        <li><p>Communications:</p>
+            <ul class=square-bullet>
+                <li><p>Supports two-way audio-only calls</p></li>
+                <li><p>Supports two-way audio and video calls</p></li>
+                <li><p>Supports transitions between audio-only and video/audio
+                sessions (within browser limitations)</p></li>
+                <li><p>Supports incoming calls from either the web or the SIP side</p></li>
+                <li><p>Supports sending context data from a web client to the
+                SIP Server as attached data when a call is established</p></li>
+                <li><p>Supports sending mid-call user data either to SIP Server
+                as mapped data, or to the remote peer</p></li>
+		        <li><p>Supports call transfer with Genesys SIP Server</p></li>
+		        <li><p>Supports sending DTMF tones as telephone-events</p></li>
+            </ul>
+        </li>
+        <li><p>Web browser support:</p>
+            <ul class=square-bullet>
+                <li><p>Google Chrome</p></li>
+                <li><p>Google Chrome for Android</p></li>
+                <li><p>Mozilla Firefox</p></li>
+                <li><p>Mozilla Firefox for Android</p></li>
+				<li><p>Opera (Desktop and Mobile)</p></li>
+            </ul>
+        </li>
+        <li><p>Supports anonymous access from the web (such as in click-to-dial scenarios)</p></li>
+        <li><p>JavaScript libraries for integration with web applications, communications, and attached data transfer</p></li>
+
+        <li><p>Security:</p>
+            <ul class=square-bullet>
+                <li><p>DTLS-SRTP Support</p></li>
+            </ul>
+        </li>
+
+        <li><p>The WebRTC JSAPI provides a configuration parameter to
+        specify the time (in milliseconds) to wait for an answer from the peer
+        side after making an offer. If that timeout expires and the offer is
+        still not answered, then the JSAPI sends the <code>onPeerNoanswer</code>
+        event to the client application.</p>
+
+        <p>The minimum valid value for this timeout is <code>18000</code> (18
+        seconds) and the default value is <code>60000</code> (60 seconds).</p>
+        </li>
+
+        <li><p>The WebRTC JSAPI provides a mechanism for mid-session data transfer for the following scenarios:</p>
+            <ul class=square-bullet>
+                <li><p>Between two peers</p></li>
+                <li><p>From a peer to the SIP Server as mapped user data</p></li>
+            </ul>
+		</li>
+
+<!-- End of "New In This Release" item -->
+
+</ul>
+
+<!-- End of "New In This Release" section -->
+
+
+<a name="corrections8.5.200.07"></a>
+<h4>
+Corrections and Modifications
+</h4>
+
+<!-- Standard sentence. Do not change. -->
+<p>
+This first release of this product does not include any corrections or modifications.
+</p>
+
+<!-- End of "Corrections and Modifications" section -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!--End of Release Information Section for 8.5.200.07-->
+
+<!-- Known Issues and Recommendations section starts here. -->
+
+<a name=issues></a>
+<h3>
+Known Issues and Recommendations
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+This section provides the latest information on known issues and
+recommendations associated with this product.
+</p>
+
+<!--If there are no items to document, retain the gray divider lines and insert
+“There are no known issues or recommendations for this product.” between them. -->
+
+<hr class="item-separator">
+<!--  Beginning of known issues item -->
+<p>The Chrome browser, since version 47, supports user media operations only from 
+  secure origin. If you are using Genesys WebRTC service with Chrome browser version 
+  47 or higher, you must use HTTPS for the application server, as well as the 
+  WebRTC Gateway. To do this, configure the WebRTC Gateway and set up the application 
+  server with the appropriate security certificates as described in the <a href="http://docs.genesys.com/Documentation/WRTC/8.5.2/Deployment/Welcome"><em>Genesys 
+  WebRTC Service Deployment Guide</em></a>.</p>
+<hr class="item-separator">
+<p>The WebRTC JSAPI Installation Package for Windows can only be installed in 
+  the default directory. (MWA-422)</p>
+<table width="300" border="0">
+<tr>
+<td class=small-text>
+<b>Found In:</b>&nbsp;8.5.200.10
+</td>
+<td class=small-text>
+<b>Fixed In:</b>&nbsp;
+</td>
+</tr>
+</table>
+<hr class="item-separator">
+<!--  End of known issues item -->
+<!--  Beginning of known issues item -->
+<p>Firefox does not currently support renegotiation of an ongoing media session: 
+  once a media session has been set up, its parameters are fixed. For all practical 
+  purposes, this means that you cannot, for example, start an audio-only call 
+  and then add video to that same PeerConnection later in that session. </p>
+<p>
+In order to add video mid-call, the recommended workaround is to destroy the
+audio-only PeerConnection and create a new PeerConnection that uses both audio
+and video. This is handled internally in the JSAPI. If you wish to track this issue, the current Firefox
+bug can be found at
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=857115">https://bugzilla.mozilla.org/show_bug.cgi?id=857115</a>
+</p>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+<!--  Beginning of known issues item -->
+
+<p>
+Mozilla Firefox does not currently support sending DTMF tones. The JSAPI returns
+an error (<tt>-1</tt>) when its DTMF-sending API is used with Firefox.
+</p>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+<!--  Beginning of known issues item -->
+
+<p>
+Mozilla Firefox does not support SDES-SRTP.
+</p>
+
+<hr class="item-separator">
+<!--  End of known issues item -->
+
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!-- End of Known Issues and Recommendations section. -->
+
+<!-- Discontinued Support section starts here. -->
+
+<a name=discontinued></a>
+<h3>
+Discontinued Support
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+This section documents features that are no longer supported in this
+software. This cumulative list is in release-number order with the
+most recently discontinued features at the top of the list.
+</p>
+
+<!--If there are no items to document, retain the gray divider lines and insert
+“There are no discontinued items for this product.” between them.-->
+
+<hr class="item-separator">
+
+
+<!--  Beginning of Discontinued Support item -->
+
+<p>
+There are no discontinued items for this product.
+</p>
+
+<hr class="item-separator">
+<!--  End of Discontinued Support item -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!-- End of Discontinued Support section. -->
+
+<!-- Internationalization section starts here. -->
+
+<a name=international></a>
+<h3>
+Internationalization
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+Information in this section is included for international customers.
+</p>
+
+<!--If there are no items to document, retain the gray divider lines and insert
+“There are no internationalization issues for this product.” between them.-->
+
+
+<!--  Beginning of internationalization item -->
+
+
+<hr class="item-separator">
+
+<p>
+There are no internationalization issues for this product.
+</p>
+
+<hr class="item-separator">
+<!--  End of internationalization item -->
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class="section-divider">
+<!-- End of Internationalization section. -->
+
+<!-- Additional Information section starts here. -->
+
+<a name=information></a>
+<h3>
+Additional Information
+</h3>
+
+<!-- Standard sentence. Do not change. -->
+
+<p>
+Additional information on Genesys Telecommunications Laboratories, Inc. is
+available on our <a href="http://genesys.com/customer-care"> Customer Care website</a>.
+The following documentation also contains information about this software. Please
+consult the <em>Deployment Guide</em> first.
+</p>
+
+<ul class=square-bullet>
+
+<!--  Beginning of "Additional Information" item -->
+
+<li><p>
+The
+<a href="http://docs.genesys.com/Documentation/WRTC/8.5.2/Deployment/Welcome"><em>Genesys
+WebRTC Service Deployment Guide</em></a> gives you the information that you need to
+get started with Genesys WebRTC Service. This document contains product overview
+information, as well as deployment details.
+</p></li>
+<!--  End of "Additional Information" item -->
+
+<!--  Beginning of "Additional Information" item -->
+<li><p>
+The
+<a href="http://docs.genesys.com/Documentation/WRTC/8.5.2/Developer/Welcome"><em>Genesys
+WebRTC Service Developer's Guide</em></a> gives you the information that you need to
+customize Genesys WebRTC Service.
+</p></li>
+<!--  End of "Additional Information" item -->
+
+</ul>
+
+<p>Product documentation is provided on the <a href="http://genesys.com/customer-care">Customer
+  Care website</a>, the <a href="http://docs.genesys.com">Genesys Documentation
+  website</a>, and the Documentation Library DVD (produced monthly).</p>
+
+<p><b>Note:</b> For the DVD, the <i>New Documents on this DVD</i> page indicates
+  the production date for that disc. Due to disc production schedules, documentation
+  on the Genesys Documentation website may be more up-to-date than what is available
+  on disc immediately after a product is released or updated. To determine the
+  version of a document, check the version number that is located on the second
+  page in PDFs or on the <i>About This File</i> topic in Help files.</p>
+
+
+<p align="right" class=small-text>
+<a href="#top">
+Top of Page
+</a>
+</p>
+
+<hr class=big-rule>
+<!-- End of Additional Information section. -->
+
+</body>
+</html>
