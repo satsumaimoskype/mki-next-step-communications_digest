@@ -63,11 +63,15 @@ app.use('/images', express.static(__dirname + '/images'));
 // app.use(express.static(path.join(__dirname, 'out')));
 
 
+///////////////////////////////////
+/*
 app.get('/',
   passport.authenticate('digest', { session: false }),
   function(req, res) {
     res.redirect(302, "/login")
 });
+*/
+////////////////////////////////////
 
 //<<
 app.get('/login', function(req, res) {
