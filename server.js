@@ -11,6 +11,8 @@ var db = require('./db');
 // hash, and authentication will fail if the computed value does not match that
 // of the request.  The user object will be set at `req.user` in route handlers
 // after authentication.
+
+/*
 passport.use(new Strategy({ qop: 'auth' },
   function(username, callback) {
     db.users.findByUsername(username, function(err, user) {
@@ -19,6 +21,7 @@ passport.use(new Strategy({ qop: 'auth' },
       return callback(null, user, user.password);
     })
   }));
+*/
 
 // Create a new Express application.
 var app = express();
