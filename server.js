@@ -125,4 +125,12 @@ app.post('/hello',
     res.json({ message: 'Hello, ' + req.body.name, from: req.user.username });
   });
 */
-app.listen(80);
+
+var LISTEN_IP = '0.0.0.0';
+
+//Web サーバーが Listen する ポート
+//var LISTEN_PORT = 80;
+// var LISTEN_PORT = 3000;
+var LISTEN_PORT =  Number(process.env.PORT || 80);
+//app.listen(80);
+app.listen(LISTEN_PORT);
