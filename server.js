@@ -74,7 +74,8 @@ app.get('/',
 ////////////////////////////////////
 
 //<<
-app.get('/login', function(req, res) {
+// app.get('/login', function(req, res) {
+app.get('/', function(req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
