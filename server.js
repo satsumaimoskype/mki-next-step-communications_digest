@@ -48,7 +48,7 @@ app.use(cookieSession({secret: 'app_1'}));
 
 app.use(express.static(path.join(__dirname, 'views')));
 // app.use(express.static(path.join(__dirname, 'images')));
-// app.use(express.static(path.join(__dirname, '.')));
+app.use(express.static(path.join(__dirname, '.')));
 
 app.use('/out', express.static(__dirname + '/out'));
 app.use('/images', express.static(__dirname + '/images'));
@@ -74,8 +74,8 @@ app.get('/',
 ////////////////////////////////////
 
 //<<
-// app.get('/login', function(req, res) {
-app.get('/', function(req, res) {
+app.get('/login', function(req, res) {
+// app.get('/', function(req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
@@ -140,4 +140,5 @@ var LISTEN_PORT =  Number(process.env.PORT || 80);
 //app.listen(80);
 app.listen(LISTEN_PORT);
 
-console.log("Listen Port: ", LISTEN_PORT);
+console.log("Heroku Internal Listen Port:   ", LISTEN_PORT);
+console.log("Internet External Listen Port: 443");
