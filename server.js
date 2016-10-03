@@ -77,17 +77,21 @@ app.get('/',
 ////////////////////////////////////
 
 //<<
+app.get('/', function(req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
+
 app.get('/login', function(req, res) {
 // app.get('/', function(req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
 app.get('/next_step_communications_3', function(req, res) {
-  res.sendfile(__dirname + '/views/next_step_communications_3.html');
+  res.sendfile(__dirname + '/next_step_communications_3.html');
 });
 
 app.get('/next_step_communications_4', function(req, res) {
-  res.sendfile(__dirname + '/views/next_step_communications_4.html');
+  res.sendfile(__dirname + '/next_step_communications_4.html');
 });
 //>>
 //
