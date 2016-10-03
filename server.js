@@ -1,151 +1,113 @@
-var express = require('express');
-var passport = require('passport');
-var Strategy = require('passport-http').DigestStrategy;
-var db = require('./db');
-
-// Configure the Digest strategy for use by Passport.
-//
-// The Digest strategy requires a `secret`function, which is used to look up
-// user.  The function must invoke `cb` with the user object as well as the
-// user's password as known by the server.  The password is used to compute a
-// hash, and authentication will fail if the computed value does not match that
-// of the request.  The user object will be set at `req.user` in route handlers
-// after authentication.
+#!/usr/bin/env node
 
 /*
-passport.use(new Strategy({ qop: 'auth' },
-  function(username, callback) {
-    db.users.findByUsername(username, function(err, user) {
-      if (err) { return callback(err); }
-      if (!user) { return callback(null, false); }
-      return callback(null, user, user.password);
-    })
-  }));
-*/
-
-// Create a new Express application.
-var app = express();
-
-// Configure Express application.
-//app.configure(function() {
-//  app.use(express.logger());
-//});
-// http://stackoverflow.com/questions/25083239/openshift-socket-io-express-deprecated-app-configure-check-app-getenv
-
-//<<
-// Convert Express 3 to Express 4
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var cookieSession = require('cookie-session');
-var path = require('path');
-var fs = require('fs');
-// var marked = require('marked');
-
-//<<
-app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieSession({secret: 'app_1'}));
-//>>
-
-
-app.use(express.static(path.join(__dirname, 'views')));
-// app.use(express.static(path.join(__dirname, 'images')));
-app.use(express.static(path.join(__dirname, '.')));
-
-//app.use('/out/remark.js', express.static(__dirname + '/out/remark.js'));
-app.use('/images', express.static(__dirname + '/images'));
-// app.use(express.static(path.join(__dirname, 'views')));
-
-//app.use(express.static(__dirname + '/out/remark.js'));
-// app.use(express.static(__dirname + '/.'));
-// app.use(express.static(__dirname + '/images'));
-
-// app.use(express.static('public'));
-// app.use(express.static('images'));
-//app.use(express.static('out/remark.js'));
-
-
-///////////////////////////////////
-/*
-app.get('/',
-  passport.authenticate('digest', { session: false }),
-  function(req, res) {
-    res.redirect(302, "/login")
-});
-*/
-////////////////////////////////////
-
-//<<
-app.get('/', function(req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
-
-app.get('/login', function(req, res) {
-// app.get('/', function(req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
-
-app.get('/next_step_communications_3', function(req, res) {
-  res.sendfile(__dirname + '/next_step_communications_3.html');
-});
-
-app.get('/next_step_communications_4', function(req, res) {
-  res.sendfile(__dirname + '/next_step_communications_4.html');
-});
-//>>
-//
-/*
-<<
-app.get('/login', function(req, res) {
-  var path = __dirname + '/next_step_communications_3.md';
-  var file = fs.readFileSync(path, 'utf8');
-  res.send(marked(file.toString()));
-});
->>
+  eb コンテンツを開発するための Node.js 簡易 Web サーバー
+  http://blogs.msdn.com/b/osamum/archive/2015/05/29/web-node-js-web.aspx
 */
 /*
-app.get ('/docs', function (req, res) {
-
-   // Allow the docs.html template to 'include' markdown files
-   var marked = require ('marked');
-
-   var md = function (filename) {
-      var path = __dirname + filename;
-      var include = fs.readFileSync (path, 'utf8');
-      var html = marked (include);
-
-      return html;
-   };
-
-   res.render ('docs', {"md": md});
-});
+  Start:
+  nomdemon node_simple_webser.js
+  Access to:
+  localhost:3031/examples/index.html
 */
 
-/*
-app.get('/hello',
-  passport.authenticate('digest', { session: false }),
-  function(req, res) {
-    res.json({ message: 'Hello, ' + req.query.name, from: req.user.username });
-  });
+var PROGRAM_NAME = "node simple HTTP server"
+var PROGRAM_VERSION = "0.1.1"
 
-// curl -v -d "name=World" --user jack:secret --digest http://127.0.0.1:3000/hello
-app.post('/hello',
-  passport.authenticate('digest', { session: false }),
-  // express.bodyParser(),
-  function(req, res) {
-    res.json({ message: 'Hello, ' + req.body.name, from: req.user.username });
-  });
-*/
-
+/*Web コンテンツを開発するための Node.js 簡易 Web サーバー サンプル*/
+//Web サーバーが Listen する IP アドレス
+// var LISTEN_IP = '127.0.0.1';
+// var LISTEN_IP = 'localhost';
+// var LISTEN_IP = 'next-step-communications-3.herokuapp.com';
 var LISTEN_IP = '0.0.0.0';
 
 //Web サーバーが Listen する ポート
 //var LISTEN_PORT = 80;
 // var LISTEN_PORT = 3000;
 var LISTEN_PORT =  Number(process.env.PORT || 80);
-//app.listen(80);
-app.listen(LISTEN_PORT);
+//ファイル名が指定されない場合に返す既定のファイル名
+// var DEFAULT_FILE = "index.html";
+var DEFAULT_FILE = "index.html";
+// var DEFAULT_FILE = "boilerplate-local.html";
 
-console.log("Heroku Internal Listen Port:   ", LISTEN_PORT);
-console.log("Internet External Listen Port: 443");
+var http = require('http'),
+  fs = require('fs');
+
+//拡張子を抽出
+function getExtension(fileName) {
+  var fileNameLength = fileName.length;
+  var dotPoint = fileName.indexOf('.', fileNameLength - 5);
+  var extn = fileName.substring(dotPoint + 1, fileNameLength);
+  return extn;
+}
+
+//content-type を指定
+function getContentType(fileName) {
+  var extentsion = getExtension(fileName).toLowerCase();
+  var contentType = {
+    'html': 'text/html',
+    'htm': 'text/htm',
+    'css': 'text/css',
+    'js': 'text/javaScript; charset=utf-8',
+    'json': 'application/json; charset=utf-8',
+    'xml': 'application/xml; charset=utf-8',
+    'jpeg': 'image/jpeg',
+    'jpg': 'image/jpg',
+    'gif': 'image/gif',
+    'png': 'image/png',
+    'mp3': 'audio/mp3',
+  };
+  var contentType_value = contentType[extentsion];
+  if (contentType_value === undefined) {
+    contentType_value = 'text/plain';
+  };
+  return contentType_value;
+}
+
+//Web サーバーのロジック
+var server = http.createServer();
+server.on('request',
+  function(request, response) {
+    console.log("\nAccess to " + PROGRAM_NAME + " v" + PROGRAM_VERSION + " port:" + LISTEN_PORT + " ==>");
+    console.log("Current directory:", __dirname);
+    console.log('Requested Url:' + request.url);
+    //console.log('Requested:',request);
+    var requestedFile = request.url;
+    requestedFile = (requestedFile.substring(requestedFile.length - 1, 1) === '/') ? requestedFile + DEFAULT_FILE : requestedFile;
+
+    // Add  the default Page
+    var add_index;
+    switch (true) {
+      case /^.*\/$/.test(requestedFile):
+        add_index = DEFAULT_FILE;
+        break;
+      default:
+        // add_index = "";
+        add_index = "";
+    }
+    requestedFile = requestedFile + add_index;
+
+    console.log('Handle Url (Modified Reuest Url):' + requestedFile);
+    console.log('File Extention:' + getExtension(requestedFile));
+    console.log('Content-Type:' + getContentType(requestedFile));
+    fs.readFile('.' + requestedFile, 'binary', function(err, data) {
+      if (err) {
+        response.writeHead(404, {
+          'Content-Type': 'text/plain'
+        });
+        response.write('not found\n');
+        response.end();
+      } else {
+        response.writeHead(200, {
+          'Content-Type': getContentType(requestedFile)
+        });
+        response.write(data, "binary");
+        response.end();
+      }
+    });
+  }
+);
+
+//server.listen(LISTEN_PORT,LISTEN_IP);
+server.listen(LISTEN_PORT);
+// console.log(PROGRAM_NAME + ' v' + PROGRAM_VERSION + ' is running at http://' + LISTEN_IP + ':' + LISTEN_PORT);
