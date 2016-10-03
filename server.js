@@ -134,3 +134,5 @@ var LISTEN_IP = '0.0.0.0';
 var LISTEN_PORT =  Number(process.env.PORT || 80);
 //app.listen(80);
 app.listen(LISTEN_PORT);
+
+console.log("Listen Port: ", LISTEN_PORT);
