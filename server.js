@@ -53,17 +53,17 @@ app.use(express.static(path.join(__dirname, 'views')));
 // app.use(express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, '.')));
 
-app.use('/out', express.static(__dirname + '/out'));
+app.use('/out/remark.js', express.static(__dirname + '/out/remark.js'));
 app.use('/images', express.static(__dirname + '/images'));
 // app.use(express.static(path.join(__dirname, 'views')));
 
-app.use(express.static(__dirname + '/out'));
+app.use(express.static(__dirname + '/out/remark.js'));
 // app.use(express.static(__dirname + '/.'));
 // app.use(express.static(__dirname + '/images'));
 
 // app.use(express.static('public'));
 // app.use(express.static('images'));
-app.use(express.static('out'));
+app.use(express.static('out/remark.js'));
 
 
 ///////////////////////////////////
