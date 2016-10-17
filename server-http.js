@@ -26,8 +26,8 @@ var LISTEN_IP = '0.0.0.0';
 // var LISTEN_PORT = 3000;
 var LISTEN_PORT =  Number(process.env.PORT || 80);
 //ファイル名が指定されない場合に返す既定のファイル名
-// var DEFAULT_FILE = "index.html";
-var DEFAULT_FILE = "next_step_communications_3.html";
+var DEFAULT_FILE = "index.html";
+// var DEFAULT_FILE = "next_step_communications_3.html";
 // var DEFAULT_FILE = "boilerplate-local.html";
 
 var http = require('http'),
