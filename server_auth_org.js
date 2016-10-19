@@ -1,10 +1,17 @@
 var express = require('express');
-
-// Passport Digest Authentication
-
 var passport = require('passport');
 var Strategy = require('passport-http').DigestStrategy;
 var db = require('./db');
+
+// Configure the Digest strategy for use by Passport.
+//
+// The Digest strategy requires a `secret`function, which is used to look up
+// user.  The function must invoke `cb` with the user object as well as the
+// user's password as known by the server.  The password is used to compute a
+// hash, and authentication will fail if the computed value does not match that
+// of the request.  The user object will be set at `req.user` in route handlers
+// after authentication.
+
 
 passport.use(new Strategy({ qop: 'auth' },
   function(username, callback) {
@@ -58,15 +65,18 @@ app.use(express.static(__dirname + '/out'));
 
 // app.use(express.static('public'));
 // app.use(express.static('images'));
-app.use(express.static('/out/remark.js'));
+//app.use(express.static('out/remark.js'));
 
-// Passport Digest Authentication
+
+///////////////////////////////////
 
 app.get('/',
   passport.authenticate('digest', { session: false }),
   function(req, res) {
     res.redirect(302, "/login")
 });
+
+////////////////////////////////////
 
 //<<
 app.get('/', function(req, res) {
@@ -130,13 +140,14 @@ app.post('/hello',
   });
 */
 
-// var LISTEN_IP = '0.0.0.0';
+var LISTEN_IP = '0.0.0.0';
 
 //Web サーバーが Listen する ポート
 //var LISTEN_PORT = 80;
-var LISTEN_PORT = 3000;
-// var LISTEN_PORT =  Number(process.env.PORT || 80);
+// var LISTEN_PORT = 3000;
+var LISTEN_PORT =  Number(process.env.PORT || 80);
 //app.listen(80);
 app.listen(LISTEN_PORT);
 
-console.log("\nInternal Listenning Port on AWS EC2 Ubuntu:", LISTEN_PORT);
+console.log("Heroku Internal Listen Port:   ", LISTEN_PORT);
+console.log("Internet External Listen Port: 443");

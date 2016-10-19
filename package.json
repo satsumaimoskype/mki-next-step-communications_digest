@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gnab/remark.git"
+    "url": "git+https://github.com/gnab/remark.git"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
@@ -34,12 +34,23 @@
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^1.2.0",
-    "express": "^3.21.1",
+    "express": "^4.14.0",
     "passport": "^0.2.2",
     "passport-http": "^0.3.0",
     "path": "^0.12.7"
   },
   "scripts": {
     "test": "node make test"
-  }
+  },
+  "description": "Passportの認証の追加の外部の参考サイト Expressのユーザー認証をPassportで行う(Markdown next step communications) passport/express-3.x-http-digest-example express3をexpress4に修正して動かした。 $ curl -v --user jack:secret --digest http://127.0.0.1:3000/ => OK http://localhost:3000/ =>OK https://github.com/passport/express-3.x-http-digest-example",
+  "bugs": {
+    "url": "https://github.com/gnab/remark/issues"
+  },
+  "homepage": "https://github.com/gnab/remark#readme",
+  "main": "delete_remark.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
 }
